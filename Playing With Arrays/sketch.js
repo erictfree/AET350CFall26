@@ -1,7 +1,10 @@
 // Fullscreen p5.js display for a single value (number/string) or a short array.
 // Set currentValue to whatever you want to show, then call updateDisplay(currentValue).
 
-let currentValue;
+const numbers = [12, 37, 51, 64, 78, 91, 23, 88, 45, 100];
+const fruits = ['apple', 'banana', 'cherry', 'dragonfruit', 'kiwi', 'mango'];
+
+let currentValue = numbers;
 
 const COLORS = {
   bg: '#1e1e2e',
@@ -18,20 +21,19 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   textAlign(CENTER, CENTER);
   textFont('Menlo, Consolas, monospace');
-  updateDisplay(numbers);
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
   background(COLORS.bg);
+  
+  drawValue(currentValue);
+}
 
-  if (Array.isArray(currentValue)) {
-    drawArray(currentValue);
+function drawValue(value) {
+  if (Array.isArray(value)) {
+    drawArray(value);
   } else {
-    drawSingleValue(currentValue);
+    drawSingleValue(value);
   }
 }
 
@@ -110,4 +112,8 @@ function drawArray(arr) {
 function formatValue(value) {
   if (typeof value === 'string') return `"${value}"`;
   return String(value);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

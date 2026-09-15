@@ -1,9 +1,6 @@
 // Sample data and higher-order array functions.
 // Try one expression at a time, then pass its result to updateDisplay().
 
-const numbers = [12, 37, 51, 64, 78, 91, 23, 88, 45, 100];
-const fruits = ['apple', 'banana', 'cherry', 'dragonfruit', 'kiwi', 'mango'];
-
 // forEach - runs a function for each element
 // numbers.forEach(n => console.log(n * 2));
 
