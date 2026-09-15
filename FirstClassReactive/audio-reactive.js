@@ -25,6 +25,9 @@
  * @typedef {(number|AudioNumberFunction)} AudioNumber
  */
 (() => {
+  // ---------------------------------------------------------------------------
+  // Audio utilities: lifecycle, FFT analysis, and value-or-function evaluation
+  // ---------------------------------------------------------------------------
   let song;
   let fft;
   const audio = { bass: 0, mid: 0, treble: 0 };
@@ -117,6 +120,10 @@
   function audioValue(value) {
     return typeof value === "function" ? value(audio) : value;
   }
+
+  // ---------------------------------------------------------------------------
+  // Reactive drawing primitives: resolve arguments, then draw with p5
+  // ---------------------------------------------------------------------------
 
   /**
    * Draw a centered circle using the current p5 styles.
