@@ -3,10 +3,6 @@
 
 let currentValue;
 
-// Try changing these arrays, then experiment with the array methods below.
-const numbers = [12, 37, 51, 64, 78, 91, 23, 88, 45, 100];
-const fruits = ['apple', 'banana', 'cherry', 'dragonfruit', 'kiwi', 'mango'];
-
 const COLORS = {
   bg: '#1e1e2e',
   number: '#7aa2f7',
@@ -18,60 +14,11 @@ const COLORS = {
   label: '#8888aa'
 };
 
-const DEMOS = [
-  42,
-  "hello",
-  numbers.slice(0, 5),
-  fruits.slice(0, 5),
-  []
-];
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textAlign(CENTER, CENTER);
   textFont('Menlo, Consolas, monospace');
-
-  // ----- Higher-order array function examples (try one at a time) -----
-
-  // forEach - just runs a function per element, nothing to display
-  // numbers.forEach(n => console.log(n * 2));   // logs each number doubled, one at a time
-
-  // map - transform each element into a new array
-  // updateDisplay(numbers.map(n => n * 2));         // new array with every number doubled
-  // updateDisplay(fruits.map(f => f.toUpperCase())); // new array with every fruit name in caps
-
-  // filter - keep only the elements that pass a test
-  const filteredNumbers = numbers.filter(n => n > 50); // new array with only numbers greater than 50
-  updateDisplay(filteredNumbers);
-  // updateDisplay(fruits.filter(f => f.length > 5)); // new array with only fruit names longer than 5 letters
-
-  // reduce - combine all elements into a single value
-  updateDisplay(numbers.reduce((sum, n) => sum + n, 0));      // total of every number added together
-  // updateDisplay(numbers.reduce((max, n) => Math.max(max, n))); // the single largest number in the array
-
-  // find / some / every - test elements, return one value or a boolean
-  // updateDisplay(numbers.find(n => n > 90));  // the first number greater than 90 (or undefined if none)
-  // updateDisplay(numbers.some(n => n > 90));  // true if AT LEAST ONE number is greater than 90
-  // updateDisplay(numbers.every(n => n > 0));  // true only if EVERY number is greater than 0
-
-  // sort - reorder elements. WARNING: sort() is destructive - it mutates
-  // the array it's called on, in place, instead of returning a new one.
-  // numbers.sort((a, b) => a - b) would permanently reorder `numbers` itself.
-  // Copy first with [...numbers] (or numbers.slice()) to keep the original safe.
-  const sortedNumbers = [...numbers].sort((a, b) => a - b); // copy, then sort the copy smallest to largest
-  updateDisplay(sortedNumbers.slice(0, 8)); // show the first 8 (smallest) sorted numbers
-
-  // ----- Chaining - call another array method directly on the result of the last one -----
-
-  // filter then map: keep only the even numbers, then double each one that's left
-  const doubledEvens = numbers.filter(n => n % 2 === 0).map(n => n * 10);
-  updateDisplay(doubledEvens);
-  // filter then map then reduce: keep numbers over 50, double them, then add them all into one total
-  // updateDisplay(numbers.filter(n => n > 50).map(n => n * 2).reduce((sum, n) => sum + n, 0));
-
-  // map doesn't have to return numbers or strings - the callback can return ANY type,
-  // like a boolean. Here every number becomes true/false based on the test.
-  updateDisplay(numbers.map(n => n > 50)); // array of true/false, same length/order as numbers
+  updateDisplay(numbers);
 }
 
 function windowResized() {
@@ -85,13 +32,6 @@ function draw() {
     drawArray(currentValue);
   } else {
     drawSingleValue(currentValue);
-  }
-}
-
-function keyPressed() {
-  const n = parseInt(key, 10);
-  if (n >= 1 && n <= DEMOS.length) {
-    updateDisplay(DEMOS[n - 1]);
   }
 }
 
