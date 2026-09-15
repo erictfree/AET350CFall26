@@ -12,14 +12,14 @@ After saving and reloading, click again to start the music.
 
 To use the smaller example, change the last script tag in `index.html` to
 `<script src="examples/one-circle.js"></script>`. Load only one sketch at a time.
-Keep `sound.mp3` beside `index.html`: file paths are relative to the HTML page.
+Keep `assets/sound.mp3` in the project: file paths are relative to the HTML page.
 
 ## Load your song in setup
 
 ```js
 async function setup() {
   createCanvas(600, 400);
-  const song = await loadSound("sound.mp3");
+  const song = await loadSound("assets/sound.mp3");
   song.loop(true);
   audioReactive.init(song);
 }
@@ -139,7 +139,7 @@ for argument names, defaults, units, and drawing behavior.
 
 | Symptom | Check |
 | --- | --- |
-| No music | Click the canvas; check volume and the `sound.mp3` path. |
+| No music | Click the canvas; check volume and the `assets/sound.mp3` path. |
 | Loading never finishes | Check the browser's Network panel. p5.sound 0.4.1 can leave failed file loads pending. |
 | Initialization error | Pass the result of `await loadSound(...)`, not a path or Promise. Call init once. |
 | No audio movement | Put `audioReactive.update()` after background and before shapes; check playback and sensitivity. |

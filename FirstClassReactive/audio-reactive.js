@@ -41,7 +41,7 @@
    * @throws {Error} If initialized more than once on the same page.
    * @throws {TypeError} If sound is missing or has no connect() method.
    * @example
-   * const song = await loadSound("sound.mp3");
+   * const song = await loadSound("assets/sound.mp3");
    * song.loop(true);
    * audioReactive.init(song);
    */

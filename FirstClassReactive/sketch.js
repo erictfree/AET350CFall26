@@ -3,7 +3,7 @@
 
 async function setup() {
   createCanvas(windowWidth, windowHeight);
-  const song = await loadSound("sound.mp3");
+  const song = await loadSound("assets/sound.mp3");
   song.loop(true);
   audioReactive.init(song);
 }

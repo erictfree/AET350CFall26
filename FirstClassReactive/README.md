@@ -34,7 +34,7 @@ with [the one-circle example](examples/one-circle.js). Click the canvas to play/
 ```js
 async function setup() {
   createCanvas(600, 400);
-  const song = await loadSound("sound.mp3");
+  const song = await loadSound("assets/sound.mp3");
   song.loop(true);
   audioReactive.init(song);
 }
@@ -99,6 +99,6 @@ Public functions also have JSDoc comments in [the source](audio-reactive.js).
 The Markdown documentation uses relative links and works in GitHub and VS Code.
 No documentation build or GitHub Pages deployment is needed.
 
-The included `sound.mp3` comes from the original project's demo audio and is not
+The included `assets/sound.mp3` comes from the original project's demo audio and is not
 part of the JavaScript library. See [distribution notes](docs/teaching-notes.md#distribution)
 before publishing the package publicly.

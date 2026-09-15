@@ -35,7 +35,7 @@ contract separately from this general evaluation mechanism.
 ```js
 async function setup() {
   createCanvas(600, 400);
-  const song = await loadSound("sound.mp3");
+  const song = await loadSound("assets/sound.mp3");
   song.loop(true);
   audioReactive.init(song);
 }
@@ -118,7 +118,7 @@ last script tag in `index.html` pointed at only one runnable sketch.
 ## Distribution notes
 
 This is a local browser-script package, not a published npm module. The package
-metadata is for versioning and development checks. The included `sound.mp3` was
+metadata is for versioning and development checks. The included `assets/sound.mp3` was
 copied from the original project's demo audio and is separate from the library.
 
 No project license has been selected in this prototype. Choose a license and add

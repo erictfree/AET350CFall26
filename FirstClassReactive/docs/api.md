@@ -100,7 +100,7 @@ Connect a previously loaded song to the library's FFT. Call once in setup.
 argument is missing or lacks a `connect()` method. A path or Promise is not a loaded song.
 
 ```js
-const song = await loadSound("sound.mp3");
+const song = await loadSound("assets/sound.mp3");
 song.loop(true);
 audioReactive.init(song);
 ```
