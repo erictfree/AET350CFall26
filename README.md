@@ -9,6 +9,8 @@ Technologies (AET)** at **The University of Texas at Austin**, taught by
 - [FirstClassReactive](FirstClassReactive/) — exploring first-class and
   higher-order JavaScript functions through a beginner-friendly p5.js 2 and
   p5.sound 0.4.1 library for making shapes respond to music.
+- [Playing With Arrays](Playing%20With%20Arrays/) — a fullscreen p5.js sketch for
+  experimenting with higher-order array functions.
 
 Open `FirstClassReactive/index.html` with VS Code Live Server. The project README
 contains the quick start, API reference, examples, architecture notes, and tests.
