@@ -1,6 +1,8 @@
 # AET350C Fall 2026
 
-Course repository for small creative-coding experiments.
+Course repository for **AET 350C** in the **Department of Arts and Entertainment
+Technologies (AET)** at **The University of Texas at Austin**, taught by
+**Professor Eric Freeman**.
 
 ## Projects
 

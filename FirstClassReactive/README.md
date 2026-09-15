@@ -2,6 +2,12 @@
 
 A small teaching library for p5.js: pass a number or an audio function to a shape.
 
+## Course context
+
+This project is for **AET 350C** in the **Department of Arts and Entertainment
+Technologies (AET)** at **The University of Texas at Austin**. It is prepared for
+students by **Professor Eric Freeman**.
+
 ```js
 audioReactiveCircle(300, 200, audio => 50 + audio.bass * 180);
 ```
