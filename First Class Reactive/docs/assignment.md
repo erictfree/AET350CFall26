@@ -1,4 +1,4 @@
-# Assignment: Reactive Audio Shapes
+# Assignment 3: Reactive Audio Shapes
 
 ## Course
 
@@ -33,7 +33,7 @@ The starter includes `assets/sound.mp3`; keep the folder structure intact.
 
 Starting from `sketch.js`:
 
-1. Keep song loading and `audioReactive.update()`.
+1. Do not remove the provided song-loading code or the `audioReactive.update()` call.
 2. Use at least three different reactive shapes.
 3. Make at least four shape arguments audio-reactive with functions.
 4. Use at least two audio bands (`bass`, `mid`, or `treble`).
@@ -42,6 +42,15 @@ Starting from `sketch.js`:
 
 An arrow calculates a value only. It should not call `circle()`, `rect()`, or
 another drawing function.
+
+## Extra credit: add a custom shape
+
+Write your own `audioReactive...` shape function that follows the same pattern as
+the supplied primitives. It should accept numbers or audio functions for its
+parameters, resolve those values, and draw one new kind of shape. Keep the arrow
+functions responsible for calculating values; keep the new shape responsible for
+drawing. Use your custom shape in the final composition and explain its design in
+your submission paragraph.
 
 ## Starting example
 
