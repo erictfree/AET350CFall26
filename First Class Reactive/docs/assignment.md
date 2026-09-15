@@ -75,6 +75,6 @@ Do not submit the entire downloaded ZIP unless requested.
 ## Troubleshooting
 
 - Click the canvas to start audio; browsers require a user gesture.
-- Keep `background()` before `audioReactive.update()`, and update before shapes.
+- For a clean frame, you may place `background()` first, then update audio, then draw shapes.
 - Confirm the song path is `assets/sound.mp3`.
 - Check the browser console for JavaScript errors.
