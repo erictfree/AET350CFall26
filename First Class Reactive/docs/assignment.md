@@ -70,6 +70,7 @@ function draw() {
 
 Sizes and positions use pixels; rotations and angles use radians.
 
+<a id="provided-shapes-and-documentation"></a>
 ## ⭐ Provided shapes and documentation
 
 The library provides six drawing primitives:
