@@ -5,6 +5,12 @@
 Version 0.1.0. Public API for p5 global mode. Load `audio-reactive.js` after p5.js
 and p5.sound and before your sketch. The library does not define p5 lifecycle functions.
 
+> **PROVIDED SHAPES — START HERE:** The library includes
+> [`audioReactiveCircle`](#circle), [`audioReactiveRect`](#rect),
+> [`audioReactiveLine`](#line), [`audioReactiveStar`](#star),
+> [`audioReactiveOrbit`](#orbit), and [`audioReactiveWave`](#wave).
+> Each takes a number or a function for its parameters.
+
 ## Contents
 
 - [Argument convention](#arguments)

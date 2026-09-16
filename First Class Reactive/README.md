@@ -72,7 +72,7 @@ This is a regular browser script. No build step or npm install is required to us
 it. The CDN scripts require internet access. It supports one initialized song per
 page, not p5 instance mode. It has not been published to npm.
 
-## Shape helpers
+## ⭐ Shape helpers — start here
 
 All arguments independently accept numbers or functions. Optional arguments have defaults.
 This is the central pattern: pass a number when a value should stay fixed, or pass
