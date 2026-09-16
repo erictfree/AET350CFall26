@@ -25,6 +25,7 @@ the behavior, or combine shapes into a composition.
 - [Teaching and maintenance notes](docs/teaching-notes.md) — the evaluation pattern, exercises, and tests.
 - [Architecture](docs/architecture.md) — how utilities and drawing primitives fit together.
 - [Assignment: Reactive Audio Shapes](docs/assignment.md) — student brief, download steps, and requirements.
+- [Creating custom shapes](docs/custom-shapes.md) — extra-credit guide for adding a new primitive.
 - [Changelog](CHANGELOG.md) — version history.
 
 ## Quick start
