@@ -90,7 +90,7 @@ and [architecture notes](architecture.md).
 
 ## Submission
 
-Submit a ZIP file containing everything in your sketch folder, including
+Submit a ZIP file containing your entire `First Class Reactive` folder, including
 `index.html`, your edited `sketch.js`, `audio-reactive.js`, the `assets` folder
 with `sound.mp3`, and any custom shape or other JavaScript files you created.
 Do not include `node_modules` or unrelated files.
