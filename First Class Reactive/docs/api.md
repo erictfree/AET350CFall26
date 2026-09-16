@@ -15,8 +15,8 @@ and p5.sound and before your sketch. The library does not define p5 lifecycle fu
 <a id="arguments"></a>
 ## Argument convention
 
-`AudioNumber` means **a number or a function that receives `AudioState` and returns
-a number**. Every shape parameter has this type, including optional parameters.
+Every shape parameter can be **a number or a function that receives the current
+audio object and returns a number**, including optional parameters.
 
 ```js
 audioReactiveCircle(300, 200, 100);
@@ -156,7 +156,7 @@ if (!audioReactive.isPlaying()) {
 <a id="circle"></a>
 ## `audioReactiveCircle(x, y, size)`
 
-Draw a circle using the current fill and stroke. Each parameter is an `AudioNumber`.
+Draw a circle using the current fill and stroke. Each parameter can be a number or a function.
 
 | Parameter | Required | Meaning |
 | --- | --- | --- |
@@ -174,7 +174,7 @@ audioReactiveCircle(300, 200, audio => 50 + audio.bass * 180);
 ## `audioReactiveRect(x, y, w, h, rotation = 0)`
 
 Draw a rectangle positioned by its **center**, not its upper-left corner.
-Each parameter is an `AudioNumber`.
+Each parameter can be a number or a function.
 
 | Parameter | Required/default | Meaning |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ audioReactiveRect(300, 200, audio => 80 + audio.mid * 200, 16,
 <a id="line"></a>
 ## `audioReactiveLine(x1, y1, x2, y2)`
 
-Draw a line between two endpoints. Each parameter is an `AudioNumber`.
+Draw a line between two endpoints. Each parameter can be a number or a function.
 
 | Parameter | Required | Meaning |
 | --- | --- | --- |
@@ -213,7 +213,7 @@ audioReactiveLine(100, 80, 500, audio => 80 + audio.treble * 150);
 <a id="star"></a>
 ## `audioReactiveStar(x, y, size, rotation = 0)`
 
-Draw a five-point star. Each parameter is an `AudioNumber`.
+Draw a five-point star. Each parameter can be a number or a function.
 
 | Parameter | Required/default | Meaning |
 | --- | --- | --- |
@@ -233,7 +233,7 @@ audioReactiveStar(300, 200, audio => 60 + audio.treble * 120,
 <a id="orbit"></a>
 ## `audioReactiveOrbit(x, y, radius, size, angle)`
 
-Draw one dot on a circular orbit. Each parameter is an `AudioNumber`.
+Draw one dot on a circular orbit. Each parameter can be a number or a function.
 
 | Parameter | Required | Meaning |
 | --- | --- | --- |
@@ -255,7 +255,7 @@ audioReactiveOrbit(300, 200, audio => 70 + audio.bass * 80,
 ## `audioReactiveWave(x, y, w, amplitude, waves = 3, phase = 0)`
 
 Draw a decorative sine wave sampled at 81 vertices. This is not the song's raw
-waveform. Each parameter is an `AudioNumber`.
+waveform. Each parameter can be a number or a function.
 
 | Parameter | Required/default | Meaning |
 | --- | --- | --- |
