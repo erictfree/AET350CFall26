@@ -10,10 +10,13 @@ Here is a simple triangle primitive:
 
 ```js
 function audioReactiveTriangle(x, y, size) {
+  // A parameter can be a fixed value or a function.
+  // If it is a function, call it with the current audio object.
   const cx = typeof x === 'function' ? x(audioReactive.audio) : x;
   const cy = typeof y === 'function' ? y(audioReactive.audio) : y;
   const s = typeof size === 'function' ? size(audioReactive.audio) : size;
 
+  // The arrow function supplies the size; this function draws the triangle.
   triangle(cx, cy - s / 2, cx - s / 2, cy + s / 2, cx + s / 2, cy + s / 2);
 }
 ```
@@ -21,6 +24,7 @@ function audioReactiveTriangle(x, y, size) {
 Use it in `draw()` like any other shape:
 
 ```js
+// The first two values stay fixed. The arrow makes the size react to treble.
 audioReactiveTriangle(300, 200, audio => 40 + audio.treble * 160);
 ```
 
