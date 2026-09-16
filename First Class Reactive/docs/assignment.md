@@ -90,11 +90,30 @@ and [architecture notes](architecture.md).
 
 ## Submission
 
-Submit your edited `sketch.js`, one screenshot or short screen recording showing
-the composition responding to the song, and a short paragraph naming the audio
-bands you used and explaining what each arrow function controls.
+Submit a ZIP file containing your complete project code. Include:
 
-Do not submit the entire downloaded ZIP unless requested.
+- `index.html`;
+- your edited `sketch.js`;
+- `audio-reactive.js`;
+- the `assets` folder with `sound.mp3`; and
+- any custom shape or other JavaScript files you created.
+
+You may zip the entire `First Class Reactive` folder. Do not include
+`node_modules` or unrelated files.
+
+Also include a short artist statement (about 100–150 words). Name the audio bands
+you used and explain what your arrow functions control. Describe the visual idea
+or feeling you were exploring, not just what the code does.
+
+Example:
+
+> I used the bass band to make the central circle expand and contract like a
+> breathing object. The mid band controls the star's rotation, so the star feels
+> more restless when the melody becomes active. I used treble for the wave height
+> and chose a cool blue fill against a dark background to make the piece feel
+> spacious and nocturnal. Each arrow function returns one value for a shape
+> parameter; the shape functions handle the drawing.
+
 
 ## Troubleshooting
 
