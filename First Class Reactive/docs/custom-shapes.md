@@ -1,6 +1,8 @@
 # Creating Your Own Reactive Shape
 
-For extra credit, make a new shape that fits the library's pattern:
+For extra credit, make a new shape that fits the library's pattern. A **custom
+shape** is just a JavaScript function that accepts values and uses p5.js drawing
+commands to draw something new:
 
 1. Accept shape arguments as numbers or functions.
 2. Call each function with the current audio object.
@@ -10,13 +12,13 @@ Here is a simple triangle primitive:
 
 ```js
 function audioReactiveTriangle(x, y, size) {
-  // A parameter can be a fixed value or a function.
+  // Each parameter can be a fixed value or a function.
   // If it is a function, call it with the current audio object.
   const cx = typeof x === 'function' ? x(audioReactive.audio) : x;
   const cy = typeof y === 'function' ? y(audioReactive.audio) : y;
   const s = typeof size === 'function' ? size(audioReactive.audio) : size;
 
-  // The arrow function supplies the size; this function draws the triangle.
+  // Use the resolved values with p5.js drawing commands.
   triangle(cx, cy - s / 2, cx - s / 2, cy + s / 2, cx + s / 2, cy + s / 2);
 }
 ```
@@ -24,7 +26,7 @@ function audioReactiveTriangle(x, y, size) {
 Use it in `draw()` like any other shape:
 
 ```js
-// The first two values stay fixed. The arrow makes the size react to treble.
+// The first two values stay fixed. This arrow makes the size react to treble.
 audioReactiveTriangle(300, 200, audio => 40 + audio.treble * 160);
 ```
 

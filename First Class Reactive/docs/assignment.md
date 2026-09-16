@@ -48,13 +48,13 @@ another drawing function.
 
 ## Extra credit: add a custom shape
 
-Write your own `audioReactive...` shape function that follows the same pattern as
-the supplied primitives. It should accept numbers or audio functions for its
-parameters, resolve those values, and draw one new kind of shape. See [Creating
-Your Own Reactive Shape](custom-shapes.md) for a short guide. Keep the arrow
-functions responsible for calculating values; keep the new shape responsible for
-drawing. Use your custom shape in the final composition and explain its design in
-your submission paragraph.
+Write your own `audioReactive...` custom shape: a JavaScript function that follows
+the same pattern as the supplied primitives. It should accept numbers or audio
+functions for its parameters, resolve those values, and draw one new kind of
+shape. See [Creating Your Own Reactive Shape](custom-shapes.md) for a short guide.
+Keep the arrow functions responsible for calculating values; keep the custom
+shape responsible for drawing. Use it in the final composition and explain its
+design in your submission paragraph.
 
 ## Starting example
 
