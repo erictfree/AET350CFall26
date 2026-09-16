@@ -43,8 +43,10 @@ Starting from `sketch.js`:
 4. Use at least two audio bands (`bass`, `mid`, or `treble`).
 5. Change the p5 styling to establish a visual idea.
 
-An arrow function calculates a value only in this model. It should not call `circle()`, `rect()`, or
-another drawing function.
+Keep the responsibilities clear: a shape function draws the shape, while each
+arrow passed to it only creates one responsive value for `x`, `y`, `size`, or
+another parameter. An arrow can read the audio object and return a value, but it
+should not call `circle()`, `rect()`, or another drawing function.
 
 ## Extra credit: add a custom shape
 

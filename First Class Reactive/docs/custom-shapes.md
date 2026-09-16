@@ -31,9 +31,10 @@ fill(100, 220, 255);
 audioReactiveTriangle(300, 200, audio => 40 + audio.treble * 160);
 ```
 
-The arrow `audio => 40 + audio.treble * 160` calculates the triangle's size.
-`audioReactiveTriangle()` then uses that size in the p5.js `triangle()` command.
-Put appearance choices such as `fill()` and `stroke()` in `draw()`, before the
-custom shape call. If the custom code uses `translate()`, `rotate()`, or changes
-a p5.js mode, use `push()` at the beginning and `pop()` at the end so the next
-drawing starts with the old settings.
+Keep the responsibilities clear: the custom shape function only draws the shape.
+Each arrow function passed to it only creates one responsive value for `x`, `y`,
+`size`, or another parameter. An arrow can read the audio object and return a
+value, but it should not draw anything. Put appearance choices such as `fill()`
+and `stroke()` in `draw()`, before the custom shape call. If the custom code uses
+`translate()`, `rotate()`, or changes a p5.js mode, use `push()` at the beginning
+and `pop()` at the end so the next drawing starts with the old settings.
