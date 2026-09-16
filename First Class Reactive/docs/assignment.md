@@ -16,7 +16,7 @@ fixed number or an arrow function that receives the current audio object.
 
 1. Open the [AET350CFall26 repository](https://github.com/erictfree/AET350CFall26).
 2. Open **First Class Reactive**, click the green **Code** button, and choose
-   **Download ZIP**.
+   **Download ZIP** (or if you are familar with Git, use any method you like).
 3. Unzip the download and open `AET350CFall26/First Class Reactive` in VS Code.
 4. Right-click `index.html` and choose **Open with Live Server**.
 
