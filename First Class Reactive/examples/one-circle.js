@@ -1,4 +1,9 @@
-// To try this example, change the last script in index.html to examples/one-circle.js.
+// HOW TO RUN THIS EXAMPLE
+// 1. Open the First Class Reactive folder in VS Code.
+// 2. In index.html, replace the final sketch script with:
+//    <script src="examples/one-circle.js"></script>
+// 3. Right-click index.html and choose "Open with Live Server".
+// 4. Click the canvas to start the music.
 // Load only one sketch at a time. The song is in assets/sound.mp3.
 async function setup() {
   createCanvas(windowWidth, windowHeight);
