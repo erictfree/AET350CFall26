@@ -4,7 +4,8 @@
 
 **AET 350C — Department of Arts and Entertainment Technologies**  
 **The University of Texas at Austin**  
-**Professor Eric Freeman**
+**Professor Eric Freeman**  
+**TA: Tanmayee Bharadwaj**
 
 ## Overview
 
