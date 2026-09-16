@@ -90,16 +90,10 @@ and [architecture notes](architecture.md).
 
 ## Submission
 
-Submit a ZIP file containing your complete project code. Include:
-
-- `index.html`;
-- your edited `sketch.js`;
-- `audio-reactive.js`;
-- the `assets` folder with `sound.mp3`; and
-- any custom shape or other JavaScript files you created.
-
-You may zip the entire `First Class Reactive` folder. Do not include
-`node_modules` or unrelated files.
+Submit a ZIP file containing everything in your sketch folder, including
+`index.html`, your edited `sketch.js`, `audio-reactive.js`, the `assets` folder
+with `sound.mp3`, and any custom shape or other JavaScript files you created.
+Do not include `node_modules` or unrelated files.
 
 Also include a short artist statement (about 100–150 words). Name the audio bands
 you used and explain what your arrow functions control. Describe the visual idea
