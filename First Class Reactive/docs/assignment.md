@@ -95,18 +95,22 @@ Submit a ZIP file containing your entire `First Class Reactive` folder, includin
 with `sound.mp3`, and any custom shape or other JavaScript files you created.
 Do not include `node_modules` or unrelated files.
 
-Also include a short artist statement (about 100–150 words). Name the audio bands
-you used and explain what your arrow functions control. Describe the visual idea
-or feeling you were exploring, not just what the code does.
+At the top of `sketch.js`, add a short artist statement as a comment (about
+100–150 words). Name the audio bands you used and explain what your arrow
+functions control. Describe the visual idea or feeling you were exploring, not
+just what the code does.
 
-Example:
+Example comment:
 
-> I used the bass band to make the central circle expand and contract like a
-> breathing object. The mid band controls the star's rotation, so the star feels
-> more restless when the melody becomes active. I used treble for the wave height
-> and chose a cool blue fill against a dark background to make the piece feel
-> spacious and nocturnal. Each arrow function returns one value for a shape
-> parameter; the shape functions handle the drawing.
+```js
+// Artist statement:
+// I used the bass band to make the central circle expand and contract like a
+// breathing object. The mid band controls the star's rotation, so the star feels
+// more restless when the melody becomes active. I used treble for the wave height
+// and chose a cool blue fill against a dark background to make the piece feel
+// spacious and nocturnal. Each arrow function returns one value for a shape
+// parameter; the shape functions handle the drawing.
+```
 
 
 ## Troubleshooting
