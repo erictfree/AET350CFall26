@@ -12,6 +12,10 @@ Create a short p5.js composition whose shapes respond to music. Practice
 first-class and higher-order JavaScript functions: a shape argument can be a
 fixed number or an arrow function that receives the current audio object.
 
+> **START HERE — PROVIDED SHAPES:** Before designing your composition, review
+> the six `audioReactive...` primitives in the [Provided shapes and documentation](#provided-shapes-and-documentation)
+> section below. Their full parameters and examples are in the [API reference](api.md).
+
 ## Download the starter project
 
 1. Open the [AET350CFall26 repository](https://github.com/erictfree/AET350CFall26).
@@ -66,7 +70,7 @@ function draw() {
 
 Sizes and positions use pixels; rotations and angles use radians.
 
-## Provided shapes and documentation
+## ⭐ Provided shapes and documentation
 
 The library provides six drawing primitives:
 

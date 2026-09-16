@@ -14,6 +14,9 @@ To use the smaller example, change the last script tag in `index.html` to
 `<script src="examples/one-circle.js"></script>`. Load only one sketch at a time.
 Keep `assets/sound.mp3` in the project: file paths are relative to the HTML page.
 
+> **START HERE — PROVIDED SHAPES:** See the [API reference](api.md) for the six
+> `audioReactive...` shapes, their parameters, and examples.
+
 ## Load your song in setup
 
 ```js
