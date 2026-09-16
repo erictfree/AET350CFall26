@@ -23,14 +23,17 @@ function audioReactiveTriangle(x, y, size) {
 }
 ```
 
-Use it in `draw()` like any other shape:
+Use it in `draw()` like this:
 
 ```js
-// The first two values stay fixed. This arrow makes the size react to treble.
+fill(100, 220, 255);
+// The arrow returns a size. The triangle function uses that size to draw.
 audioReactiveTriangle(300, 200, audio => 40 + audio.treble * 160);
 ```
 
-The arrow function calculates a value; the shape function does the drawing. Keep
-styles such as `fill()` and `stroke()` in `draw()`. If your shape changes p5
-settings or transforms, wrap those changes in `push()` and `pop()` so it does not
-affect the next shape.
+The arrow `audio => 40 + audio.treble * 160` calculates the triangle's size.
+`audioReactiveTriangle()` then uses that size in the p5.js `triangle()` command.
+Put appearance choices such as `fill()` and `stroke()` in `draw()`, before the
+custom shape call. If the custom code uses `translate()`, `rotate()`, or changes
+a p5.js mode, use `push()` at the beginning and `pop()` at the end so the next
+drawing starts with the old settings.
