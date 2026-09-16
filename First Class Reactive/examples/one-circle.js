@@ -1,5 +1,5 @@
 // To try this example, change the last script in index.html to examples/one-circle.js.
-// Load only one sketch at a time. The song stays in the main folder.
+// Load only one sketch at a time. The song is in assets/sound.mp3.
 async function setup() {
   createCanvas(windowWidth, windowHeight);
   const song = await loadSound("assets/sound.mp3");
