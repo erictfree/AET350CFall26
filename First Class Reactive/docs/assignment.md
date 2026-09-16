@@ -38,9 +38,8 @@ Starting from `sketch.js`:
 3. Make at least four shape arguments audio-reactive with functions.
 4. Use at least two audio bands (`bass`, `mid`, or `treble`).
 5. Change the p5 styling to establish a visual idea.
-6. Add one meaningful composition change of your own.
 
-An arrow calculates a value only. It should not call `circle()`, `rect()`, or
+An arrow function calculates a value only in this model. It should not call `circle()`, `rect()`, or
 another drawing function.
 
 ## Extra credit: add a custom shape
