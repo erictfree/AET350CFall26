@@ -54,14 +54,31 @@ your submission paragraph.
 ## Starting example
 
 ```js
-background(20);
-audioReactive.update();
-noStroke();
-fill(100, 220, 255);
-audioReactiveCircle(width / 2, height / 2, audio => 50 + audio.bass * 180);
+function draw() {
+  background(20);
+  audioReactive.update();
+  noStroke();
+  fill(100, 220, 255);
+  audioReactiveCircle(width / 2, height / 2, audio => 50 + audio.bass * 180);
+}
 ```
 
 Sizes and positions use pixels; rotations and angles use radians.
+
+## Provided shapes and documentation
+
+The library provides six drawing primitives:
+
+- `audioReactiveCircle()` — a centered circle
+- `audioReactiveRect()` — a centered rectangle with optional rotation
+- `audioReactiveLine()` — a line between two points
+- `audioReactiveStar()` — a five-point star with optional rotation
+- `audioReactiveOrbit()` — a dot traveling around a center point
+- `audioReactiveWave()` — a controllable sine wave
+
+See the [API reference](api.md) for each shape's parameters, defaults, units,
+examples, and behavior. The full project README also links to the [examples](examples.md)
+and [architecture notes](architecture.md).
 
 ## Submission
 
