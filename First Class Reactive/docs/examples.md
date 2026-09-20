@@ -4,7 +4,8 @@
 
 ## Visual progression
 
-Open [progression.html](../examples/progression.html) with Live Server for a
+Open [progression.html](../examples/progression.html) with **VS Code Live Server**
+(not by double-clicking the HTML file) for a
 guided visual sequence: a plain p5 circle, a reactive circle with a fixed number,
 and a reactive circle whose size comes from an audio arrow. Press **1–3** to
 focus a stage. The live bass, mid, and treble bars at the bottom show the values
