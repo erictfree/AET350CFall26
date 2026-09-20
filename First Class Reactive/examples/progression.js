@@ -93,9 +93,12 @@ function drawStage(number, x, y) {
     audioReactiveCircle(x, y, 45 + audioReactive.audio.bass * 180);
   }
 
-  fill(185, 188, 210);
-  textSize(12);
-  text(stageCode(number), x, top + cardHeight - 42, cardWidth - 28, 34);
+  fill(20, 22, 34);
+  rect(left + 12, y + 70, cardWidth - 24, 62, 7);
+  fill(210, 215, 235);
+  textAlign(CENTER, TOP);
+  textSize(11);
+  text(stageCode(number), x, y + 80, cardWidth - 32, 48);
 }
 
 function stageTitle(number) {
@@ -106,10 +109,10 @@ function stageTitle(number) {
 }
 
 function stageCode(number) {
-  if (number === 1) return 'circle(width / 2, height / 2, 100);';
+  if (number === 1) return 'circle(x, y, 100);';
   if (number === 2) return 'audioReactiveCircle(x, y, 100);';
-  if (number === 3) return 'audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);';
-  return 'audioReactiveCircle(x, y, 45 + audioReactive.audio.bass * 180);';
+  if (number === 3) return 'audioReactiveCircle(x, y,\n  audio => 45 + audio.bass * 180);';
+  return 'audioReactiveCircle(x, y,\n  45 + audioReactive.audio.bass * 180);';
 }
 
 function drawMeters() {
