@@ -51,13 +51,17 @@ function drawStage(number, x, y) {
   rect(left, top, cardWidth, cardHeight, 14);
 
   noStroke();
+  fill(active ? color(125, 210, 255) : color(70, 75, 100));
+  rect(left, top, cardWidth, 5, 14);
+
+  noStroke();
   fill(active ? color(125, 210, 255) : color(160));
   textAlign(CENTER, TOP);
   textSize(16);
   text(`${number}. ${stageTitle(number)}`, x, top + 18);
 
-  const checkboxX = x - 34;
-  const checkboxY = top + 52;
+  const checkboxX = left + cardWidth - 28;
+  const checkboxY = top + 18;
   stroke(180);
   strokeWeight(1);
   fill(31, 34, 49);
@@ -70,9 +74,9 @@ function drawStage(number, x, y) {
   }
   noStroke();
   fill(185, 188, 210);
-  textAlign(LEFT, CENTER);
+  textAlign(RIGHT, CENTER);
   textSize(11);
-  text(enabled[number - 1] ? 'calling' : 'not called', checkboxX + 23, checkboxY + 8);
+  text(enabled[number - 1] ? 'on' : 'off', checkboxX - 8, checkboxY + 8);
 
   if (!enabled[number - 1]) {
     fill(115, 120, 145);
@@ -146,8 +150,8 @@ function mousePressed() {
   for (let number = 1; number <= 4; number++) {
     const x = [width * 0.125, width * 0.375, width * 0.625, width * 0.875][number - 1];
     const top = height * 0.42 - 125;
-    const checkboxX = x - 34;
-    const checkboxY = top + 52;
+    const checkboxX = x - min(width * 0.22, 245) / 2 + min(width * 0.22, 245) - 28;
+    const checkboxY = top + 18;
     if (mouseX >= checkboxX && mouseX <= checkboxX + 16 && mouseY >= checkboxY && mouseY <= checkboxY + 16) {
       enabled[number - 1] = !enabled[number - 1];
       return;
