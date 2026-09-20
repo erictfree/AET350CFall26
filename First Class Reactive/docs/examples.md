@@ -2,6 +2,14 @@
 
 [Home](../README.md) · [Getting started](getting-started.md) · [API reference](api.md)
 
+## Visual progression
+
+Open [progression.html](../examples/progression.html) with Live Server for a
+guided visual sequence: a plain p5 circle, a reactive circle with a fixed number,
+and a reactive circle whose size comes from an audio arrow. Press **1–3** to
+focus a stage. The live bass, mid, and treble bars at the bottom show the values
+available to the arrow function.
+
 Use [one-circle.js](../examples/one-circle.js) for a complete starter or
 [sketch.js](../sketch.js) for the full six-shape composition.
 

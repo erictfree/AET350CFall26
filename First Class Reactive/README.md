@@ -22,6 +22,7 @@ the behavior, or combine shapes into a composition.
 - [Getting started](docs/getting-started.md) — load a song, draw, and change a behavior.
 - [API reference](docs/api.md) — every public method, parameter, default, unit, and return value.
 - [Examples](docs/examples.md) — recipes for all six shapes and compositions.
+- [Progression visual](examples/progression.html) — see numbers become an audio arrow, with live bass/mid/treble meters.
 - [Teaching and maintenance notes](docs/teaching-notes.md) — the evaluation pattern, exercises, and tests.
 - [Architecture](docs/architecture.md) — how utilities and drawing primitives fit together.
 - [Assignment: Reactive Audio Shapes](docs/assignment.md) — student brief, download steps, and requirements.
