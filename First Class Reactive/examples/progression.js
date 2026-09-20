@@ -90,11 +90,11 @@ function drawStage(number, x, y) {
     fill(255, 190, 100);
     audioReactiveCircle(x, y, 100);
   } else if (number === 3) {
-    fill(150, 255, 180);
-    audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);
-  } else {
     fill(255, 150, 220);
     audioReactiveCircle(x, y, 45 + audioReactive.audio.bass * 180);
+  } else {
+    fill(150, 255, 180);
+    audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);
   }
 
   fill(20, 22, 34);
@@ -108,15 +108,15 @@ function drawStage(number, x, y) {
 function stageTitle(number) {
   if (number === 1) return 'p5 circle';
   if (number === 2) return 'reactive circle + numbers';
-  if (number === 3) return 'reactive circle + arrow';
-  return 'reactive circle + bass number';
+  if (number === 3) return 'reactive circle + bass number';
+  return 'reactive circle + arrow';
 }
 
 function stageCode(number) {
   if (number === 1) return 'circle(x, y, 100);';
   if (number === 2) return 'audioReactiveCircle(x, y, 100);';
-  if (number === 3) return 'audioReactiveCircle(x, y,\n  audio => 45 + audio.bass * 180);';
-  return 'audioReactiveCircle(x, y,\n  45 + audioReactive.audio.bass * 180);';
+  if (number === 3) return 'audioReactiveCircle(x, y,\n  45 + audioReactive.audio.bass * 180);';
+  return 'audioReactiveCircle(x, y,\n  audio => 45 + audio.bass * 180);';
 }
 
 function drawMeters() {

@@ -8,8 +8,8 @@ Open the parent **First Class Reactive** folder in VS Code. Then open
 [progression.html](../examples/progression.html) with **VS Code Live Server**
 (not by double-clicking the HTML file or by opening the `examples` folder alone) for a
 guided visual sequence: a plain p5 circle, a reactive circle with a fixed number,
-a reactive circle whose size comes from an audio arrow, and a reactive circle
-whose size uses the current bass number directly. Press **1–4** to focus a stage.
+a reactive circle whose size uses the current bass number directly, and a reactive
+circle whose size comes from an audio arrow. Press **1–4** to focus a stage.
 Use each card's checkbox to stop or start that stage's draw call.
 The live bass, mid, and treble bars at the bottom show the values available to the
 arrow function or direct expression.
