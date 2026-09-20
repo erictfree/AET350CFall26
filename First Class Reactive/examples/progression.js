@@ -6,6 +6,7 @@
 
 let stage = 3;
 let song;
+const enabled = [true, true, true, true];
 
 async function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -34,7 +35,7 @@ function drawHeader() {
   text('From a number to an audio function', width / 2, 22);
   fill(150, 155, 180);
   textSize(13);
-  text('Press 1–4 to focus a stage  •  click to play / pause', width / 2, 57);
+  text('Press 1–4 to focus  •  click a checkbox to call / stop a stage  •  click elsewhere to play', width / 2, 57);
 }
 
 function drawStage(number, x, y) {
@@ -55,7 +56,30 @@ function drawStage(number, x, y) {
   textSize(16);
   text(`${number}. ${stageTitle(number)}`, x, top + 18);
 
-  if (number === 1) {
+  const checkboxX = x - 34;
+  const checkboxY = top + 52;
+  stroke(180);
+  strokeWeight(1);
+  fill(31, 34, 49);
+  rect(checkboxX, checkboxY, 16, 16, 3);
+  if (enabled[number - 1]) {
+    stroke(125, 210, 255);
+    strokeWeight(3);
+    line(checkboxX + 3, checkboxY + 8, checkboxX + 7, checkboxY + 12);
+    line(checkboxX + 7, checkboxY + 12, checkboxX + 14, checkboxY + 4);
+  }
+  noStroke();
+  fill(185, 188, 210);
+  textAlign(LEFT, CENTER);
+  textSize(11);
+  text(enabled[number - 1] ? 'calling' : 'not called', checkboxX + 23, checkboxY + 8);
+
+  if (!enabled[number - 1]) {
+    fill(115, 120, 145);
+    textAlign(CENTER, CENTER);
+    textSize(14);
+    text('not called', x, y);
+  } else if (number === 1) {
     fill(100, 220, 255);
     circle(x, y, 100);
   } else if (number === 2) {
@@ -116,6 +140,16 @@ function drawMeters() {
 }
 
 function mousePressed() {
+  for (let number = 1; number <= 4; number++) {
+    const x = [width * 0.125, width * 0.375, width * 0.625, width * 0.875][number - 1];
+    const top = height * 0.42 - 125;
+    const checkboxX = x - 34;
+    const checkboxY = top + 52;
+    if (mouseX >= checkboxX && mouseX <= checkboxX + 16 && mouseY >= checkboxY && mouseY <= checkboxY + 16) {
+      enabled[number - 1] = !enabled[number - 1];
+      return;
+    }
+  }
   audioReactive.toggle();
 }
 
