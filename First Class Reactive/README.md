@@ -31,7 +31,8 @@ the behavior, or combine shapes into a composition.
 
 ## Quick start
 
-Open `index.html` with Live Server in VS Code. Edit [sketch.js](sketch.js), or start
+Open the **First Class Reactive** folder in VS Code, then open `index.html` with
+Live Server. Edit [sketch.js](sketch.js), or start
 with [the one-circle example](examples/one-circle.js). Click the canvas to play/pause.
 
 ```js

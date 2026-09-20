@@ -1,5 +1,6 @@
 // AUDIO REACTIVE PROGRESSION
-// Run this through VS Code Live Server. Do not open progression.html directly
+// Open the parent First Class Reactive folder in VS Code, then run this through
+// VS Code Live Server. Do not open progression.html directly
 // as a file:// URL; browsers block the local audio file in that mode.
 // Press 1, 2, or 3 to focus a stage. Click the canvas to play or pause.
 
