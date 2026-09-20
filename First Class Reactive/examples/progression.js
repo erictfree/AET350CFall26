@@ -40,7 +40,7 @@ function drawHeader() {
 
 function drawStage(number, x, y) {
   const active = stage === number;
-  const cardWidth = min(width * 0.22, 245);
+  const cardWidth = min(width * 0.23, 340);
   const cardHeight = 275;
   const left = x - cardWidth / 2;
   const top = y - 125;
@@ -55,10 +55,10 @@ function drawStage(number, x, y) {
   rect(left, top, cardWidth, 5, 14);
 
   noStroke();
-  fill(active ? color(125, 210, 255) : color(160));
+  fill(active ? color(125, 210, 255) : color(185, 188, 210));
   textAlign(CENTER, TOP);
-  textSize(16);
-  text(`${number}. ${stageTitle(number)}`, x, top + 18);
+  textSize(15);
+  text(`${number}. ${stageTitle(number)}`, x, top - 34, cardWidth - 54, 28);
 
   const checkboxX = left + cardWidth - 28;
   const checkboxY = top + 18;
@@ -98,11 +98,11 @@ function drawStage(number, x, y) {
   }
 
   fill(20, 22, 34);
-  rect(left + 12, y + 70, cardWidth - 24, 62, 7);
+  rect(left + 16, y + 70, cardWidth - 32, 70, 7);
   fill(210, 215, 235);
   textAlign(CENTER, TOP);
-  textSize(11);
-  text(stageCode(number), x, y + 80, cardWidth - 32, 48);
+  textSize(13);
+  text(stageCode(number), x, y + 83, cardWidth - 48, 54);
 }
 
 function stageTitle(number) {
@@ -115,8 +115,8 @@ function stageTitle(number) {
 function stageCode(number) {
   if (number === 1) return 'circle(x, y, 100);';
   if (number === 2) return 'audioReactiveCircle(x, y, 100);';
-  if (number === 3) return 'audioReactiveCircle(x, y,\n  45 + audioReactive.audio.bass * 180);';
-  return 'audioReactiveCircle(x, y,\n  audio => 45 + audio.bass * 180);';
+  if (number === 3) return 'audioReactiveCircle(x, y,\n  45 + audioReactive.audio.bass\n  * 180);';
+  return 'audioReactiveCircle(x, y,\n  audio => 45 + audio.bass\n  * 180);';
 }
 
 function drawMeters() {
@@ -150,7 +150,8 @@ function mousePressed() {
   for (let number = 1; number <= 4; number++) {
     const x = [width * 0.125, width * 0.375, width * 0.625, width * 0.875][number - 1];
     const top = height * 0.42 - 125;
-    const checkboxX = x - min(width * 0.22, 245) / 2 + min(width * 0.22, 245) - 28;
+    const cardWidth = min(width * 0.23, 340);
+    const checkboxX = x - cardWidth / 2 + cardWidth - 28;
     const checkboxY = top + 18;
     if (mouseX >= checkboxX && mouseX <= checkboxX + 16 && mouseY >= checkboxY && mouseY <= checkboxY + 16) {
       enabled[number - 1] = !enabled[number - 1];
