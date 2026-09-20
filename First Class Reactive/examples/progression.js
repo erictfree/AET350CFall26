@@ -2,7 +2,7 @@
 // Open the parent First Class Reactive folder in VS Code, then run this through
 // VS Code Live Server. Do not open progression.html directly
 // as a file:// URL; browsers block the local audio file in that mode.
-// Press 1, 2, or 3 to focus a stage. Click the canvas to play or pause.
+// Press 1, 2, 3, or 4 to focus a stage. Click the canvas to play or pause.
 
 let stage = 3;
 let song;
@@ -19,9 +19,10 @@ function draw() {
   background(16, 18, 28);
   audioReactive.update();
   drawHeader();
-  drawStage(1, width * 0.18, height * 0.42);
-  drawStage(2, width * 0.50, height * 0.42);
-  drawStage(3, width * 0.82, height * 0.42);
+  drawStage(1, width * 0.125, height * 0.42);
+  drawStage(2, width * 0.375, height * 0.42);
+  drawStage(3, width * 0.625, height * 0.42);
+  drawStage(4, width * 0.875, height * 0.42);
   drawMeters();
 }
 
@@ -33,12 +34,12 @@ function drawHeader() {
   text('From a number to an audio function', width / 2, 22);
   fill(150, 155, 180);
   textSize(13);
-  text('Press 1–3 to focus a stage  •  click to play / pause', width / 2, 57);
+  text('Press 1–4 to focus a stage  •  click to play / pause', width / 2, 57);
 }
 
 function drawStage(number, x, y) {
   const active = stage === number;
-  const cardWidth = min(width * 0.27, 300);
+  const cardWidth = min(width * 0.22, 245);
   const cardHeight = 275;
   const left = x - cardWidth / 2;
   const top = y - 125;
@@ -60,9 +61,12 @@ function drawStage(number, x, y) {
   } else if (number === 2) {
     fill(255, 190, 100);
     audioReactiveCircle(x, y, 100);
-  } else {
+  } else if (number === 3) {
     fill(150, 255, 180);
     audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);
+  } else {
+    fill(255, 150, 220);
+    audioReactiveCircle(x, y, 45 + audioReactive.audio.bass * 180);
   }
 
   fill(185, 188, 210);
@@ -73,13 +77,15 @@ function drawStage(number, x, y) {
 function stageTitle(number) {
   if (number === 1) return 'p5 circle';
   if (number === 2) return 'reactive circle + numbers';
-  return 'reactive circle + arrow';
+  if (number === 3) return 'reactive circle + arrow';
+  return 'reactive circle + bass number';
 }
 
 function stageCode(number) {
   if (number === 1) return 'circle(width / 2, height / 2, 100);';
   if (number === 2) return 'audioReactiveCircle(x, y, 100);';
-  return 'audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);';
+  if (number === 3) return 'audioReactiveCircle(x, y, audio => 45 + audio.bass * 180);';
+  return 'audioReactiveCircle(x, y, 45 + audioReactive.audio.bass * 180);';
 }
 
 function drawMeters() {
@@ -114,7 +120,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  if (key >= '1' && key <= '3') stage = Number(key);
+  if (key >= '1' && key <= '4') stage = Number(key);
 }
 
 function windowResized() {
