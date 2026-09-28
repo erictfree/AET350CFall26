@@ -11,6 +11,8 @@ Technologies (AET)** at **The University of Texas at Austin**, taught by
   p5.sound 0.4.1 library for making shapes respond to music.
 - [Playing With Arrays](Playing%20With%20Arrays/) — a fullscreen p5.js sketch for
   experimenting with higher-order array functions.
+- [100 Circles](100%20Circles/) — writing a class and 100 instances that each
+  listen to one band of the music (Assignment 4).
 
 Open `FirstClassReactive/index.html` with VS Code Live Server. The project README
 contains the quick start, API reference, examples, architecture notes, and tests.
