@@ -47,11 +47,11 @@ so bass doesn't overpower mid and treble:
 function draw() {
   const audio = audioBands.read();   // one object per frame
   for (let i = 0; i < circles.length; i++) {
-    circles[i].update(audio => 10 + audio.bass * 150, audio);
+    circles[i].update(audio);
     circles[i].draw();
   }
 }
 ```
 
 Every circle gets the same audio object. What makes them different is their
-instance variables: each circle has its own position, color, and band.
+instance variables: each circle has its own position, color, and diameter.

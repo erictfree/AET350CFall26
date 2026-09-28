@@ -3,16 +3,20 @@
 // make 100 circles from it, and let each one listen to the music.
 
 // STUDENTS: write your Circle class here.
-// It needs a constructor, an update(diameter, audio) method, and a draw() method.
+// Its constructor takes a diameter that is a number or a function of the
+// audio. It also needs an update(audio) method and a draw() method.
 
 let circles = []; // your 100 circles go here
 
 async function setup() {
   createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 360, 100, 100, 100);
 
-  // STUDENTS: use a loop to create 100 circles and push them into the
-  // circles array. Give each one its own position, color, and band.
+  // STUDENTS: use a loop to create 100 circles, each with its own position
+  // and color, and push them into the circles array. Start with a fixed
+  // diameter:
+  //   circles.push(new Circle(x, y, 40));
+  // then replace 40 with a function of the audio:
+  //   circles.push(new Circle(x, y, audio => 10 + audio.bass * 150));
 
   // Keep this line last in setup(): it loads and loops the song.
   // Want your own music? Drop an MP3 into the assets folder and change the
@@ -21,20 +25,19 @@ async function setup() {
 }
 
 function draw() {
-  background(230, 30, 9);
+  background(16, 19, 28);
 
   // One fresh object each frame: { bass, mid, treble }, each 0–1.
   const audio = audioBands.read();
 
-  // STUDENTS: loop over circles. For each one, call update() with a diameter
-  // and this audio object, then call draw(). Start with a fixed diameter:
-  //   circles[i].update(40, audio);
-  // then replace 40 with a function of the audio:
-  //   circles[i].update(audio => 10 + audio.bass * 150, audio);
+  // STUDENTS: loop over circles. Pass this audio object to each circle's
+  // update(), then call its draw():
+  //   circles[i].update(audio);
+  //   circles[i].draw();
 
   // Remove this readout when your circles are working.
   noStroke();
-  fill(0, 0, 100);
+  fill(255);
   textAlign(CENTER, CENTER);
   textSize(18);
   text(
