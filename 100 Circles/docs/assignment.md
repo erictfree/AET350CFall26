@@ -105,28 +105,10 @@ const band = random(['bass', 'mid', 'treble']);
 circles.push(new Circle(x, y, () => 10 + audio[band] * 150));
 ```
 
-The constructor stores what it was given. `update()` checks which kind it
-is:
-
-```js
-constructor(x, y, diameter) {
-  this.x = x;
-  this.y = y;
-  this.diameter = diameter;   // a number or a function
-}
-
-update() {
-  if (typeof this.diameter === 'function') {
-    this.currentDiameter = this.diameter();
-  } else {
-    this.currentDiameter = this.diameter;
-  }
-}
-
-draw() {
-  circle(this.x, this.y, this.currentDiameter);
-}
-```
+The constructor stores what it was given, whether that is a number or a
+function. Your `update()` method has to work out which kind it is: a number can
+be used as is, but a function has to be called to get the diameter. Hint:
+`typeof` tells you what kind of value a variable holds.
 
 ## Submission
 
