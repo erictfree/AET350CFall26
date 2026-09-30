@@ -84,7 +84,7 @@ Starting from `sketch.js`:
 Keep the responsibilities clear: the class's `update()` method changes the
 circle's instance variables; its `draw()` method only draws what they say.
 
-### Passing a number or a function to the constructor
+### Tips
 
 `audioBands.read()` always returns the same live object, and its values change
 every frame. Get it once in `setup()`. Your arrow functions use it, so every
