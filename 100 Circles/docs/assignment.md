@@ -10,15 +10,15 @@
 ## Overview
 
 Make 100 circles that listen to music. Write a `Circle` class, create 100
-instances of it, and give every circle the same audio object in its
-constructor. Each circle listens to one band: bass, mid, or treble.
+instances of it, and let every circle read the same audio object. Each circle
+listens to one band: bass, mid, or treble.
 
 In Assignment 3, the library did the drawing and you passed in arrow functions.
 This time you write the class yourself: its constructor, its `update()`
-method, and its `draw()` method. You pass the constructor the audio object and a
-diameter that is a number or an arrow function, just like the shapes in
-Assignment 3. The circle stores both, and every frame `update()` calls the
-function with the audio to get the new diameter.
+method, and its `draw()` method. You pass the constructor a diameter, which is
+either a number or an arrow function that computes it from the audio, just like
+the shapes in Assignment 3. The circle stores it, and every frame `update()`
+calls the function to get the new diameter.
 
 > **START HERE:** The audio is already done. `audio-bands.js` loads and loops
 > the song and gives you `{ bass, mid, treble }` every frame. You
@@ -54,7 +54,7 @@ Starting from `sketch.js`:
 
 1. **Keep the provided audio.** Do not edit `audio-bands.js` or remove the
    `audioBands.init()`, `audioBands.read()`, and `audioBands.toggle()` calls.
-2. **Write a `Circle` class** with a constructor that takes `x`, `y`, `audio`,
+2. **Write a `Circle` class** with a constructor that takes `x`, `y`,
    and `diameter` (plus anything else you need, such as a color), an
    `update()` method, and a `draw()` method. Use instance variables for
    each circle's position, color, and diameter.
@@ -66,58 +66,56 @@ Starting from `sketch.js`:
    access its `bass`, `mid`, or `treble` property. All three bands must appear
    among your 100 circles.
 6. **Compute the diameter from the audio.** First create each circle with a
-   fixed diameter: `new Circle(x, y, audio, 40)`. Once that works, replace `40` with a
-   function that computes the diameter from the audio passed to it, for example
-   `new Circle(x, y, audio, a => 10 + a.bass * 150)`. Your constructor must
-   accept either a number or a function and store it, along with the audio
-   object; `update()` calls the function with the stored audio.
+   fixed diameter: `new Circle(x, y, 40)`. Once that works, replace `40` with an
+   arrow function that computes the diameter from the audio, for example
+   `new Circle(x, y, () => 10 + audio.bass * 150)`. Your constructor must
+   accept either a number or a function and store it; `update()` calls the
+   function.
 7. **Update and draw every circle.** In `draw()`, loop over `circles`. Call
    `audioBands.read()` once to refresh the audio, then call each circle's
    `update()` and `draw()`.
 8. **Use destructuring at least once.** For example, pull the bands out of the
-   audio object with `const { bass, mid, treble } = audio;`, or destructure in
-   your function's parameter: `({ bass }) => 10 + bass * 150`.
+   audio object with `const { bass, mid, treble } = audio;`, or inside your
+   arrow function: `() => { const { bass } = audio; return 10 + bass * 150; }`.
 9. **Establish a visual idea** through color, transparency, layering, or motion.
 
 Keep the responsibilities clear: the class's `update()` method changes the
 circle's instance variables; its `draw()` method only draws what they say.
 
-### Passing the audio and a diameter to the constructor
+### Passing a number or a function to the constructor
 
 `audioBands.read()` always returns the same live object, and its values change
-every frame. Get it once in `setup()` and hand it to every circle. Each circle
-keeps a reference, so it sees the current values without being passed anything
-in `update()`.
+every frame. Get it once in `setup()`. Your arrow functions use it, so every
+circle sees the current values.
 
 ```js
 const audio = audioBands.read();   // once, in setup()
 
 // Step 1: a fixed diameter. Every circle is 40 pixels.
-circles.push(new Circle(x, y, audio, 40));
+circles.push(new Circle(x, y, 40));
 
 // Step 2: a function of the audio. Every circle grows with the bass.
-circles.push(new Circle(x, y, audio, a => 10 + a.bass * 150));
+circles.push(new Circle(x, y, () => 10 + audio.bass * 150));
 
 // Step 3: in step 2, every circle listens to the bass. Now pick a band for
 // each circle inside the setup() loop. The function remembers its band.
 const band = random(['bass', 'mid', 'treble']);
-circles.push(new Circle(x, y, audio, a => 10 + a[band] * 150));
+circles.push(new Circle(x, y, () => 10 + audio[band] * 150));
 ```
 
 The constructor stores what it was given. `update()` checks which kind it
 is:
 
 ```js
-constructor(x, y, audio, diameter) {
+constructor(x, y, diameter) {
   this.x = x;
   this.y = y;
-  this.audio = audio;         // the shared audio object
   this.diameter = diameter;   // a number or a function
 }
 
 update() {
   if (typeof this.diameter === 'function') {
-    this.currentDiameter = this.diameter(this.audio);
+    this.currentDiameter = this.diameter();
   } else {
     this.currentDiameter = this.diameter;
   }

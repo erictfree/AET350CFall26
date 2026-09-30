@@ -27,7 +27,7 @@ You edit [sketch.js](sketch.js). The audio lives in
 | Call | What it does |
 | --- | --- |
 | `await audioBands.init(path)` | Loads the song and loops it. Call once, at the end of `setup()`. To use your own music, put an MP3 in `assets/` and pass its path. |
-| `audioBands.read()` | Refreshes and returns the **one shared** object `{ bass, mid, treble }`, each from 0 to 1. It is the same object every call, so a circle that holds it always sees current values. All zeros while paused. Call once per frame in `draw()`. |
+| `audioBands.read()` | Refreshes and returns the **one shared** object `{ bass, mid, treble }`, each from 0 to 1. It is the same object every call, so a function that reads it always sees current values. All zeros while paused. Call once per frame in `draw()`. |
 | `audioBands.toggle()` | Plays or pauses the song. |
 | `audioBands.isPlaying()` | `true` while the song is playing. |
 
@@ -44,9 +44,9 @@ so bass doesn't overpower mid and treble:
 ## The pattern
 
 ```js
-// setup(): every circle receives the audio object in its constructor
+// setup(): get the shared audio object; the diameter function reads it
 const audio = audioBands.read();
-circles.push(new Circle(x, y, audio, a => 10 + a.bass * 150));
+circles.push(new Circle(x, y, () => 10 + audio.bass * 150));
 
 function draw() {
   audioBands.read();                 // refreshes the shared object
@@ -57,5 +57,5 @@ function draw() {
 }
 ```
 
-Every circle holds the same audio object. What makes them different is their
+Every circle's diameter function reads the same audio object. What makes them different is their
 instance variables: each circle has its own position, color, and diameter.
