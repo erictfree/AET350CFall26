@@ -46,7 +46,6 @@ Include it in your ZIP.
 - Define a class with a constructor and methods, and create instances with `new`.
 - Explain what `this` refers to inside `circles[i].update()`.
 - Store many instances in an array and update them in a loop.
-- Use destructuring to pull named values out of an object.
 - Read a property by a name stored in a variable: `audio[band]`.
 - Pass a function into a constructor, store it, and call it later.
 
@@ -76,10 +75,7 @@ Starting from `sketch.js`:
 7. **Update and draw every circle.** In `draw()`, loop over `circles`. Call
    `audioBands.read()` once to refresh the audio, then call each circle's
    `update()` and `draw()`.
-8. **Use destructuring at least once.** For example, pull the bands out of the
-   audio object with `const { bass, mid, treble } = audio;`, or inside your
-   arrow function: `() => { const { bass } = audio; return 10 + bass * 150; }`.
-9. **Establish a visual idea** through color, transparency, layering, or motion.
+8. **Establish a visual idea** through color, transparency, layering, or motion.
 
 Keep the responsibilities clear: the class's `update()` method changes the
 circle's instance variables; its `draw()` method only draws what they say.
