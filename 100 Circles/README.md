@@ -26,7 +26,7 @@ You edit [sketch.js](sketch.js). The audio lives in
 
 | Call | What it does |
 | --- | --- |
-| `await audioBands.init(path)` | Loads the song and loops it. Call once, at the end of `setup()`. To use your own music, replace `assets/sound.mp3`, or put another MP3 in `assets/` and pass its path. |
+| `await audioBands.init(path)` | Loads the song and loops it. Call once, at the end of `setup()`. To use your own music, replace `assets/sound.mp3` with your MP3 and keep the name `sound.mp3`. |
 | `audioBands.read()` | Refreshes and returns the **one shared** object `{ bass, mid, treble }`, each from 0 to 1. It is the same object every call, so a function that reads it always sees current values. All zeros while paused. Call once per frame in `draw()`. |
 | `audioBands.toggle()` | Plays or pauses the song. |
 | `audioBands.isPlaying()` | `true` while the song is playing. |

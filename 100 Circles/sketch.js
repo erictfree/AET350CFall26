@@ -23,9 +23,8 @@ async function setup() {
   //   circles.push(new Circle(x, y, () => 10 + audio.bass * 150));
 
   // Keep this line last in setup(): it loads and loops the song.
-  // Want your own music? Replace sound.mp3 in the assets folder, or use a
-  // different file name and change the path below (for example
-  // 'assets/my-song.mp3'). Include it in your ZIP.
+  // Want your own music? Replace sound.mp3 in the assets folder with your MP3
+  // and keep the name sound.mp3 (easier for grading). Include it in your ZIP.
   await audioBands.init('assets/sound.mp3');
 }
 
