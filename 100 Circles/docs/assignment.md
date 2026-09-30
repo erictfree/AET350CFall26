@@ -37,8 +37,10 @@ new diameter.
    treble numbers change in the middle of the screen.
 
 The starter includes `assets/sound.mp3`; keep the folder structure intact.
-You may use your own music instead: put an MP3 in `assets/`, change the path
-in the `audioBands.init()` call in `sketch.js`, and include the file in your ZIP.
+You may use your own music instead. Either replace `sound.mp3` in the `assets`
+folder with your own MP3 (same file name), or, if you want to keep a different
+file name, change the path in the last line of `setup()` in `sketch.js` (the
+`audioBands.init()` call). Include your music in your ZIP.
 
 ## Learning goals
 
