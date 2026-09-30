@@ -17,8 +17,9 @@ In Assignment 3, the library did the drawing and you passed in arrow functions.
 This time you write the class yourself: its constructor, its `update()`
 method, and its `draw()` method. You pass the constructor a diameter, which is
 either a number or an arrow function that computes it from the audio, just like
-the shapes in Assignment 3. The circle stores it, and every frame `update()`
-calls the function to get the new diameter.
+the shapes in Assignment 3. The circle stores it. If it is a number, the circle
+uses it as is. If it is a function, every frame `update()` calls it to get the
+new diameter.
 
 > **START HERE:** The audio is already done. `audio-bands.js` loads and loops
 > the song and gives you `{ bass, mid, treble }` every frame. You
