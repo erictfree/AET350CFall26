@@ -10,8 +10,8 @@
 ## Overview
 
 Make 100 circles that listen to music. Write a `Circle` class, create 100
-instances of it, and give every circle the same audio object in its constructor. Each
-circle listens to one band: bass, mid, or treble.
+instances of it, and give every circle the same audio object in its
+constructor. Each circle listens to one band: bass, mid, or treble.
 
 In Assignment 3, the library did the drawing and you passed in arrow functions.
 This time you write the class yourself: its constructor, its `update()`
@@ -82,9 +82,16 @@ Starting from `sketch.js`:
 Keep the responsibilities clear: the class's `update()` method changes the
 circle's instance variables; its `draw()` method only draws what they say.
 
-### Passing a number or a function to the constructor
+### Passing the audio and a diameter to the constructor
+
+`audioBands.read()` always returns the same live object, and its values change
+every frame. Get it once in `setup()` and hand it to every circle. Each circle
+keeps a reference, so it sees the current values without being passed anything
+in `update()`.
 
 ```js
+const audio = audioBands.read();   // once, in setup()
+
 // Step 1: a fixed diameter. Every circle is 40 pixels.
 circles.push(new Circle(x, y, audio, 40));
 
