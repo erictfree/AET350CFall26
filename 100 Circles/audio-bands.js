@@ -34,15 +34,21 @@ const audioBands = (() => {
     }
   }
 
-  // Returns a NEW object every call: { bass, mid, treble }, each 0–1.
-  // All zeros while nothing is playing.
+  // The one live object { bass, mid, treble }, each 0–1. read() updates it in
+  // place every frame, so anything holding a reference (such as a circle that
+  // got it in its constructor) always sees the current values.
+  const audio = { bass: 0, mid: 0, treble: 0 };
+
+  // Refreshes and returns the live audio object. All zeros while nothing is
+  // playing.
   function read() {
-    const audio = { bass: 0, mid: 0, treble: 0 };
     if (song?.isPlaying()) {
       const spectrum = fft.analyze();
       audio.bass = bandLevel(spectrum, 20, 250, BAND_GAINS.bass);
       audio.mid = bandLevel(spectrum, 250, 4000, BAND_GAINS.mid);
       audio.treble = bandLevel(spectrum, 4000, 12000, BAND_GAINS.treble);
+    } else {
+      audio.bass = audio.mid = audio.treble = 0;
     }
     return audio;
   }
