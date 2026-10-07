@@ -13,6 +13,8 @@ Technologies (AET)** at **The University of Texas at Austin**, taught by
   experimenting with higher-order array functions.
 - [100 Circles](100%20Circles/) — writing a class and 100 instances that each
   listen to one band of the music (Assignment 4).
+- [Week 7 - Live Coding](Week%207%20-%20Live%20Coding/first-live-coding-assignment.md)
+  — the first Thunk Machine live-coding assignment.
 
 Open `FirstClassReactive/index.html` with VS Code Live Server. The project README
 contains the quick start, API reference, examples, architecture notes, and tests.
